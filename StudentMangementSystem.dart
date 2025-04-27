@@ -67,11 +67,13 @@ main(){
         print("No students added yet:");
       }
 
-      print("List of Student:");
+     else{
+       print("List of Student:");
       for(var student in students){
         //very very important is that key will be same of upper which is taken
         print(" Student name: ${student['Name:']} \n  His score is ${student['Score:']} \n His age is ${student['Age:']}");
       }
+     }
       
 
     }
@@ -82,7 +84,8 @@ main(){
       if(students.isEmpty){
         print("No student added and don't find yet:");
       }
-      String highestScoreName=students[0]['Name:'];
+      else{
+         String highestScoreName=students[0]['Name:'];
       double highestScore=students[0]['Score:'];
        double highestScoreAge=students[0]['Age:'];
 
@@ -103,9 +106,10 @@ main(){
         lowestScoreAge=student['Age:'];
       }
     }
-print("Name is :$highestScoreName His score is $highestScore His age is $highestScoreAge");
-print("Name is :$lowestScoreName  His score is $lowestScore  His age is $lowestScoreAge");
+      print("Name is :$highestScoreName His score is $highestScore His age is $highestScoreAge");
+      print("Name is :$lowestScoreName  His score is $lowestScore  His age is $lowestScoreAge");
 
+      }
 }
 
 void calculateAverageScore(List<Map<String,dynamic>>students){
@@ -113,14 +117,14 @@ void calculateAverageScore(List<Map<String,dynamic>>students){
     print("No student add in the list:");
     
   }
-  int num=students.length;
+  else{
+    int num=students.length;
   double total=0;
   for(var student in students){
- 
    total=total+student['Score:'];
-
   }
   double averageScore=total/num;
   print("The average score is: $averageScore");
+  }
 }
 
